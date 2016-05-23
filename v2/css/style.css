@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Kotta+One);
+
+h2{
+	color: #666;
+}
+
+img.comp{
+     animation: flota 2s infinite;
+}
+img.comp:hover {
+	background-color: #2A2A2A;
+    border: solid 2px #2A2A2A;
+    border-radius: 100px;
+}
+.baner {
+	margin-left: 9%;
+	margin: 0;
+	position: relative;
+	top: 0;
+	width: 50%;
+}
+.imgico::after {
+    background: none;
+    border-radius: 1000px;
+    -webkit-box-shadow: 1px 15px 10px 5px rgba(43,41,43,0.3);
+       -moz-box-shadow: 1px 15px 10px 5px rgba(43,41,43,0.3);
+            box-shadow: 1px 15px 10px 5px rgba(43,41,43,0.3);
+    content: '';
+    height: 4px;
+    margin-left: -121px;
+    margin-top: 128px;
+    position: absolute;
+    width: 88px;
+}
+.getsocial.gs-inline-group {
+    margin-top: 19px;
+    position: relative;
+    margin-left: 36px;
+}
+#barra {
+    margin-top: -66px;
+    padding-bottom: 100px;
+    background: #4CAF50;
+}
+#copyright {
+    padding-top: 27px;
+    padding-bottom: 0;
+}
+#JDlogo{
+	width: 92px;
+	height: 89px;
+}
+#frase {
+	font-size: 16px;
+    line-height: 16px;
+    margin-top: -25px;
+    padding-bottom: 25px;
+    text-align: justify;
+}
+#title{
+	font-family: 'Kotta One', serif;
+	margin-left: 414px;
+	position: absolute;
+	top:100px;
+	width: 410px;
+}
+
+@keyframes flota {
+ 0% {transform: translateY(0px);}
+ 50% {transform: translateY(-3px);}
+ 100% {transform: translateY(0px);}
+}

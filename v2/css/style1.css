@@ -1,0 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Kotta+One);
+
+h2{
+	color: #666;
+}
+
+.baner {
+	margin-left: 9%;
+	margin: 0;
+	position: relative;
+	top: 0;
+	width: 50%;
+}
+
+.getsocial.gs-inline-group {
+    margin-top: 19px;
+    position: relative;
+    margin-left: 36px;
+}
+.gris{
+    color:#666;
+}
+.img_border {
+    background: #cacac6;
+    padding: 4px;
+    border: 1px solid #a9a99e;
+}
+.redes{
+    position: absolute;
+}
+#barra {
+    margin-top: -66px;
+    padding-bottom: 100px;
+    background: #4CAF50;
+}
+#copyright {
+    padding-top: 27px;
+    padding-bottom: 0;
+}
+#JDlogo{
+	width: 92px;
+	height: 89px;
+}
+#frase {
+    font-size: 16px;
+    line-height: 18px;
+    margin-left: 31%;
+    margin-top: 129px;
+    padding-bottom: 25px;
+    position: absolute;
+    text-align: justify;
+    width: 300px;
+}
+#title{
+	font-family: 'Kotta One', serif;
+	margin-left: 420px;
+	position: absolute;
+	top:40px;
+	width: 410px;
+    text-align: left;
+}
+
+@keyframes flota {
+ 0% {transform: translateY(0px);}
+ 50% {transform: translateY(-3px);}
+ 100% {transform: translateY(0px);}
+}
