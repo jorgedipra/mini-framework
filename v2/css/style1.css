@@ -3,7 +3,46 @@
 h2{
 	color: #666;
 }
-
+img#facebook {
+    margin-top: -293px;
+    margin-left: -75px;
+}
+img#Google-plus {
+    margin-top: -293px;
+    margin-left: -245px;
+}
+img#Twitter {
+    margin-top: -293px;
+    margin-left: 91px;
+}
+img#Linkedin {
+    margin-top: -154px;
+    margin-left: 184px;
+}
+img#Youtube {
+    margin-top: -154px;
+    margin-left: -338px;
+}
+img#Blogger {
+    margin-top: -17px;
+    margin-left: -245px;
+}
+img#Tumblr {
+    margin-top: -17px;
+    margin-left: -75px;
+}
+img#Wordpress {
+    margin-top: -17px;
+    margin-left: 91px;
+}
+img#Yahoo {
+    margin-top: -292px;
+    margin-left: -428px;
+}
+img#Skype {
+    margin-top: -292px;
+    margin-left: 268px;
+}
 .baner {
 	margin-left: 9%;
 	margin: 0;
@@ -34,7 +73,7 @@ h2{
     background: #4CAF50;
 }
 #copyright {
-    padding-top: 27px;
+    padding-top: 163px;
     padding-bottom: 0;
 }
 #JDlogo{
@@ -42,14 +81,14 @@ h2{
 	height: 89px;
 }
 #frase {
-    font-size: 16px;
-    line-height: 18px;
-    margin-left: 31%;
-    margin-top: 129px;
-    padding-bottom: 25px;
-    position: absolute;
-    text-align: justify;
-    width: 300px;
+   font-size: 16px;
+   line-height: 18px;
+   margin-left: 31%;
+   margin-top: 174px;
+   padding-bottom: 25px;
+   position: relative;
+   text-align: justify;
+   width: 300px;
 }
 #title{
 	font-family: 'Kotta One', serif;
