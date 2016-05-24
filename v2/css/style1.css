@@ -43,6 +43,9 @@ img#Skype {
     margin-top: -292px;
     margin-left: 268px;
 }
+img.redes:hover{
+     animation: palpita 1s infinite;
+}
 .baner {
 	margin-left: 9%;
 	margin: 0;
@@ -99,8 +102,9 @@ img#Skype {
     text-align: left;
 }
 
-@keyframes flota {
- 0% {transform: translateY(0px);}
- 50% {transform: translateY(-3px);}
- 100% {transform: translateY(0px);}
+
+@keyframes palpita {
+ 0% {width: 128px}
+ 50% {width: 11%}
+ 100% {width: 128px}
 }
