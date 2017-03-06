@@ -1,0 +1,255 @@
+@import url("http://fonts.googleapis.com/css?family=Dosis:500");
+
+
+
+#mainNavBtn1
+  top 50px
+  
+#mainNavBtn2
+  top 100px
+
+#mainNavBtn3
+  top 150px
+
+#mainNavBtn4
+  top 200px
+
+#mainNavBtn5
+  top 250px
+
+#mainNavBtn6
+  top 300px
+
+
+
+
+#mainNavBtn6, 
+#mainNavBtn5, 
+#mainNavBtn4, 
+#mainNavBtn3, 
+#mainNavBtn2, 
+#mainNavBtn1
+  position absolute
+  right 50px
+  width 190px
+  height 46px
+  background $clrGrisClaro
+  cursor pointer
+  -webkit-transform translateZ(0)
+
+#mainNavBtn6:hover,
+#mainNavBtn5:hover,
+#mainNavBtn4:hover,
+#mainNavBtn3:hover,
+#mainNavBtn2:hover,
+#mainNavBtn1:hover
+  background-position 0px 0px
+
+.BtnBg
+  position absolute
+  width 0px
+  height 46px
+  top 0
+  left 0
+  background $FondoEfMenu
+  opacity 0
+  -webkit-transition opacity 1s, width 0.4s
+  -moz-transition opacity 1s, width 0.4s
+  transition opacity 1s, width 0.4s
+
+.BtnBorders
+  position absolute
+  width 100%
+  height 100%
+  background transparent
+  &:before
+    left 0px
+    -webkit-transition height 0.1s
+    -moz-transition height 0.1s
+    transition height 0.1s
+  &:after
+    right 0px
+    -webkit-transition height 0.1s 0.2s
+    -moz-transition height 0.1s 0.2s
+    transition height 0.1s 0.2s
+
+.BtnBorders:before, .BtnBorders:after
+  content ''
+  position absolute
+  top 0px
+  display block
+  height 100%
+  width 1px
+  background rgba(255,255,255,0.7)
+
+#mainNavBtn6:hover > .BtnBorders:before,
+#mainNavBtn5:hover > .BtnBorders:before,
+#mainNavBtn4:hover > .BtnBorders:before,
+#mainNavBtn3:hover > .BtnBorders:before,
+#mainNavBtn2:hover > .BtnBorders:before,
+#mainNavBtn1:hover > .BtnBorders:before
+  height 0%
+  -webkit-transition height 0.1s 0.2s
+  -moz-transition height 0.1s 0.2s
+  transition height 0.1s 0.2s
+
+#mainNavBtn6:hover > .BtnBorders:after,
+#mainNavBtn5:hover > .BtnBorders:after,
+#mainNavBtn4:hover > .BtnBorders:after,
+#mainNavBtn3:hover > .BtnBorders:after,
+#mainNavBtn2:hover > .BtnBorders:after,
+#mainNavBtn1:hover > .BtnBorders:after
+  height 0%
+  -webkit-transition height 0.1s
+  -moz-transition height 0.1s
+  transition height 0.1s
+
+#mainNavBtn6:hover > .BtnBg, 
+#mainNavBtn5:hover > .BtnBg, 
+#mainNavBtn4:hover > .BtnBg, 
+#mainNavBtn3:hover > .BtnBg, 
+#mainNavBtn2:hover > .BtnBg, 
+#mainNavBtn1:hover > .BtnBg
+  width 190px
+  opacity 0.9
+
+#mainNavBtn6:before, #mainNavBtn6:after, 
+#mainNavBtn5:before, #mainNavBtn5:after, 
+#mainNavBtn4:before, #mainNavBtn4:after, 
+#mainNavBtn3:before, #mainNavBtn3:after, 
+#mainNavBtn2:before, #mainNavBtn2:after, 
+#mainNavBtn1:before, #mainNavBtn1:after
+  content ''
+  position absolute
+  left -12px
+  top 0px
+  width 9px
+  height 46px
+  background-size 9px 9px
+  background-position 0% 0%
+  background-repeat repeat-y
+
+#mainNavBtn6:before,
+#mainNavBtn5:before,
+#mainNavBtn4:before,
+#mainNavBtn3:before,
+#mainNavBtn2:before,
+#mainNavBtn1:before
+  background-image -webkit-linear-gradient(45deg, $gris 0px, $gris 1px, transparent 2px, $gris 3px, $gris 4px, transparent 5px, $gris 6px, $gris 7px, transparent 8px, $gris 9px, $gris 10px, transparent 11px)
+  background-image -moz-linear-gradient(45deg, $gris 0px, $gris 1px, transparent 2px, $gris 3px, $gris 4px, transparent 5px, $gris 6px, $gris 7px, transparent 8px, $gris 9px, $gris 10px, transparent 11px)
+  background-image linear-gradient(45deg, $gris 0px, $gris 1px, transparent 2px, $gris 3px, $gris 4px, transparent 5px, $gris 6px, $gris 7px, transparent 8px, $gris 9px, $gris 10px, transparent 11px)
+  opacity 1
+  -webkit-transition all 0.4s
+  -moz-transition all 0.4s
+  transition all 0.4s
+
+#mainNavBtn6:after,
+#mainNavBtn5:after,
+#mainNavBtn4:after,
+#mainNavBtn3:after,
+#mainNavBtn2:after,
+#mainNavBtn1:after
+  background-image -webkit-linear-gradient(45deg, $FondoEfMenu 0px, $FondoEfMenu 1px, transparent 2px, $FondoEfMenu 3px, $FondoEfMenu 4px, transparent 5px, $FondoEfMenu 6px, $FondoEfMenu 7px, transparent 8px, $FondoEfMenu 9px, $FondoEfMenu 10px, transparent 11px)
+  background-image -moz-linear-gradient(45deg, $FondoEfMenu 0px, $FondoEfMenu 1px, transparent 2px, $FondoEfMenu 3px, $FondoEfMenu 4px, transparent 5px, $FondoEfMenu 6px, $FondoEfMenu 7px, transparent 8px, $FondoEfMenu 9px, $FondoEfMenu 10px, transparent 11px)
+  background-image linear-gradient(45deg, $FondoEfMenu 0px, $FondoEfMenu 1px, transparent 2px, $FondoEfMenu 3px, $FondoEfMenu 4px, transparent 5px, $FondoEfMenu 6px, $FondoEfMenu 7px, transparent 8px, $FondoEfMenu 9px, $FondoEfMenu 10px, transparent 11px)
+  opacity 0
+  -webkit-transition all 0.4s
+  -moz-transition all 0.4s
+  transition all 0.4s
+
+#mainNavBtn6:hover::before,
+#mainNavBtn5:hover::before,
+#mainNavBtn4:hover::before,
+#mainNavBtn3:hover::before,
+#mainNavBtn2:hover::before,
+#mainNavBtn1:hover::before
+  opacity 0
+  background-position 0% -40%
+
+#mainNavBtn6:hover::after,
+#mainNavBtn5:hover::after,
+#mainNavBtn4:hover::after,
+#mainNavBtn3:hover::after,
+#mainNavBtn2:hover::after,
+#mainNavBtn1:hover::after
+  opacity 1
+  background-position 0% -40%
+
+.BtnInner
+  position relative
+  display block
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+  width 100%
+  height 100%
+  padding-left 10px
+  -webkit-transition padding 0.1s
+  -moz-transition padding 0.1s
+  transition padding 0.1s
+  &:before
+    top 0px
+    -webkit-transition width 0.2s
+    -moz-transition width 0.2s
+    transition width 0.2s
+  &:after
+    bottom 0px
+    -webkit-transition width 0.2s 0.1s
+    -moz-transition width 0.2s 0.1s
+    transition width 0.2s 0.1s
+
+.BtnInner:before, .BtnInner:after
+  content ''
+  position absolute
+  left 0px
+  display block
+  width 100%
+  height 1px
+  background rgba(255,255,255,0.7)
+
+#mainNavBtn6:hover > .BtnInner,
+#mainNavBtn5:hover > .BtnInner,
+#mainNavBtn4:hover > .BtnInner,
+#mainNavBtn3:hover > .BtnInner,
+#mainNavBtn2:hover > .BtnInner,
+#mainNavBtn1:hover > .BtnInner
+  padding-left 20px
+
+#mainNavBtn6:hover > .BtnInner:before, 
+#mainNavBtn5:hover > .BtnInner:before, 
+#mainNavBtn4:hover > .BtnInner:before, 
+#mainNavBtn3:hover > .BtnInner:before, 
+#mainNavBtn2:hover > .BtnInner:before, 
+#mainNavBtn1:hover > .BtnInner:before
+  width 0%
+  -webkit-transition width 0.2s 0.1s
+  -moz-transition width 0.2s 0.1s
+  transition width 0.2s 0.1s
+
+#mainNavBtn6:hover > .BtnInner:after,
+#mainNavBtn5:hover > .BtnInner:after,
+#mainNavBtn4:hover > .BtnInner:after,
+#mainNavBtn3:hover > .BtnInner:after,
+#mainNavBtn2:hover > .BtnInner:after,
+#mainNavBtn1:hover > .BtnInner:after
+  width 0%
+  -webkit-transition width 0.2s
+  -moz-transition width 0.2s
+  transition width 0.2s
+
+.supheader, .header
+  display block
+  text-transform uppercase
+
+.supheader
+  font-family $LetraConsola
+  font-size 10px
+  line-height 12px
+  color $colorFdOscuro
+  padding-top 9px
+
+.header
+  font-family $LetraStandar
+  font-size 16px
+  line-height 20px
+  color $SombreOscuroN

@@ -1,0 +1,257 @@
+/**
+* @style       Stylo de ventana/ficha
+* @media       screen
+* @version     1.0
+* @author      @jorgedipra
+* @copyright   jorge diaz
+* @apiName     page
+* @layout      in pixels
+* @date        2017
+*
+*/
+/* constantes.styl --> variables */
+/** 
+* OBJ[logo-imagen-titulo-panal]
+* #logo 	--> objeto circular con perspectiva
+* #imgagen 	--> imagen de usuario
+* #titulo	--> titulo de la pagina
+* #panal	--> fondo
+*/
+.watchcontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -104px;
+  margin-left: -190px;
+}
+.watchcontainer.one {
+  transform: perspective(1600px) rotateY(55deg) rotateX(32deg);
+  transition: 1s;
+  perspective-origin: 150px 150px;
+}
+.circle {
+  position: absolute;
+  box-sizing: border-box;
+}
+.circle.c1 {
+  perspective-origin: 150px 150px;
+  -webkit-tranform: translateZ(200px);
+  margin: 326px 0 0 326px;
+  background-color: #ffa420;
+  background-image: url("http://jorgedipra.hol.es/images/logo/h1.jpg");
+  height: 149px;
+  width: 149px;
+  border-radius: 50%;
+}
+.circle.c2 {
+  -webkit-animation: 'invrotate' linear infinite;
+  -webkit-animation-duration: 5000ms;
+  width: 400px;
+  height: 400px;
+  margin: 200px 0 0 200px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #ffa420;
+  border-top-color: #ffa420;
+  border-right-color: #ffa420;
+  border-bottom-color: transparent;
+  border-left-color: #ffa420;
+}
+.circle.c3 {
+  -webkit-animation: 'rotate' linear infinite;
+  -webkit-animation-duration: 6000ms;
+  width: 150px;
+  height: 150px;
+  margin: 326px 0 0 326px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #bd4238;
+  border-top-color: #bd4238;
+  border-right-color: #bd4238;
+  border-bottom-color: transparent;
+  border-left-color: #bd4238;
+}
+.circle.c4 {
+  -webkit-animation: 'invrotate' linear infinite;
+  -webkit-animation-duration: 40000ms;
+  width: 200px;
+  height: 200px;
+  margin: 301px 0 0 301px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #ffa420;
+  border-top-color: #ffa420;
+  border-right-color: #ffa420;
+  border-bottom-color: #ffa420;
+  border-left-color: transparent;
+}
+.circle.c41 {
+  -webkit-animation: 'rotate' linear infinite;
+  -webkit-animation-duration: 10000ms;
+  width: 250px;
+  height: 250px;
+  margin: 277px 0 0 277px;
+  border-radius: 50%;
+  background: transparent;
+  border: 5px solid #2e9eeb;
+  border-top-color: #2e9eeb;
+  border-right-color: #2e9eeb;
+  border-bottom-color: #2e9eeb;
+  border-left-color: transparent;
+}
+.circle.c5 {
+  -webkit-animation: 'invrotate' linear infinite;
+  -webkit-animation-duration: 40000ms;
+  width: 300px;
+  height: 300px;
+  margin: 250px 0 0 250px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #bd4238;
+  border-top-color: #bd4238;
+  border-right-color: #bd4238;
+  border-bottom-color: #bd4238;
+  border-left-color: #bd4238;
+}
+.circle.c6 {
+  -webkit-animation: 'rotate' linear infinite;
+  -webkit-animation-duration: 40000ms;
+  width: 320px;
+  height: 320px;
+  margin: 240px 0 0 240px;
+  border-radius: 50%;
+  background: transparent;
+  border: 10px solid #bd4238;
+  border-top-color: #bd4238;
+  border-right-color: transparent;
+  border-bottom-color: #bd4238;
+  border-left-color: transparent;
+}
+.circle.c7 {
+  -webkit-animation: 'invrotate' linear infinite;
+  -webkit-animation-duration: 40000ms;
+  width: 460px;
+  height: 460px;
+  margin: 170px 0 0 170px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #2e9eeb;
+  border-top-color: #2e9eeb;
+  border-right-color: #2e9eeb;
+  border-bottom-color: #2e9eeb;
+  border-left-color: #2e9eeb;
+  -webkit-box-shadow: 0px 0px 10px 0px #2e9eeb;
+  -moz-box-shadow: 0px 0px 10px 0px #2e9eeb;
+  box-shadow: 0px 0px 10px 0px #2e9eeb;
+}
+.circle.c8 {
+  -webkit-animation: 'invrotate' linear infinite;
+  -webkit-animation-duration: 40000ms;
+  width: 480px;
+  height: 480px;
+  margin: 160px 0 0 160px;
+  border-radius: 50%;
+  background: #191919;
+  border: 10px solid #2e9eeb;
+  border-top-color: #2e9eeb;
+  border-right-color: transparent;
+  border-bottom-color: #2e9eeb;
+  border-left-color: transparent;
+  z-index: -1;
+}
+/** /////////////////////////[titulo]///////////////////// */
+#tak {
+  color: #e95e01;
+  font-family: 'Audiowide', cursive;
+  font-size: 50px;
+  margin-left: -69px;
+  margin-top: -61px;
+  position: absolute;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  z-index: 1;
+}
+span.line-pg {
+  background: rgba(233,94,1,0.56);
+  border: solid 1px #f00;
+  -webkit-box-shadow: 0px 0px 10px 0px #e95e01;
+  -moz-box-shadow: 0px 0px 10px 0px #e95e01;
+  box-shadow: 0px 0px 10px 0px #e95e01;
+  color: #191919;
+  font-family: 'Audiowide', cursive;
+  margin-left: 155px;
+  margin-top: 87px;
+  position: absolute;
+  transform: skew(-30deg);
+  width: 300px;
+  z-index: -2;
+}
+span.line-pg > i {
+  line-height: 2.5;
+  font-size: 13px;
+  margin-left: 115px;
+}
+span.line-pg > i > span {
+  font-size: 28px;
+  line-height: 1;
+}
+span#subtitle-png {
+  margin-top: 138px;
+}
+span.line-pg>i,
+span#title-pg>h2 {
+  line-height: 10px;
+  margin-left: 110px;
+  transform: skew(30deg);
+}
+/** /////////////[keyFrame]//////////////// */
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes invrotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes tickin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  19% {
+    -webkit-transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(6deg);
+  }
+  39% {
+    -webkit-transform: rotate(6deg);
+  }
+  40% {
+    -webkit-transform: rotate(12deg);
+  }
+  59% {
+    -webkit-transform: rotate(12deg);
+  }
+  60% {
+    -webkit-transform: rotate(18deg);
+  }
+  79% {
+    -webkit-transform: rotate(18deg);
+  }
+  80% {
+    -webkit-transform: rotate(24deg);
+  }
+  99% {
+    -webkit-transform: rotate(24deg);
+  }
+  100% {
+    -webkit-transform: rotate(30deg);
+  }
+}

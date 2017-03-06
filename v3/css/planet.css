@@ -1,0 +1,219 @@
+/*Page Setup*/
+@import url("https://fonts.googleapis.com/css?family=Unica+One");
+svg {
+  background: #000;
+  border-radius: 100%;
+  height: 50%;
+  margin: 75px 30%;
+  width: 50%;
+  -webkit-perspective: 50px;
+  perspective: 50px;
+}
+circle {
+  stroke: #2e9eeb;
+  stroke-width: 2px;
+  fill: none;
+}
+.equator {
+  -webkit-transform: rotateZ(-20deg) rotateX(125deg);
+  transform: rotateZ(-20deg) rotateX(125deg);
+}
+.meridian {
+  -webkit-animation: turn 5s infinite linear;
+  animation: turn 5s infinite linear;
+}
+.meridian:nth-child(1) {
+  --target: 30deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(15deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(15deg);
+}
+.meridian:nth-child(2) {
+  --target: 45deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(30deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(30deg);
+}
+.meridian:nth-child(3) {
+  --target: 60deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(45deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(45deg);
+}
+.meridian:nth-child(4) {
+  --target: 75deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(60deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(60deg);
+}
+.meridian:nth-child(5) {
+  --target: 90deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(75deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(75deg);
+}
+.meridian:nth-child(6) {
+  --target: 105deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(90deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(90deg);
+}
+.meridian:nth-child(7) {
+  --target: 120deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(105deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(105deg);
+}
+.meridian:nth-child(8) {
+  --target: 135deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(120deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(120deg);
+}
+.meridian:nth-child(9) {
+  --target: 150deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(135deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(135deg);
+}
+.meridian:nth-child(10) {
+  --target: 165deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(150deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(150deg);
+}
+.meridian:nth-child(11) {
+  --target: 180deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(165deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(165deg);
+}
+.meridian:nth-child(12) {
+  --target: 195deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(180deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(180deg);
+}
+.meridian:nth-child(13) {
+  --target: 210deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(195deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(195deg);
+}
+.meridian:nth-child(14) {
+  --target: 225deg;
+  -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(210deg);
+  transform: rotateZ(-20deg) rotateX(35deg) rotateY(210deg);
+}
+@-webkit-keyframes turn {
+  100% {
+    -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+  }
+}
+.title {
+  text-align: center;
+  height: 10vh;
+  line-height: 10vh;
+  font-size: 50px;
+  padding: 2.5vh;
+  margin: -35px auto;
+  color: #2e9eeb;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  font-family: "ocr a std", "Lucida Console", "Courier New", monospace;
+  width: 90%;
+}
+/**[Botton] */
+@import url("http://fonts.googleapis.com/css?family=Exo+2");
+#btnVn1 {
+  top: 240px;
+  left: 50px;
+}
+#btnVn2 {
+  top: 150px;
+  left: 50px;
+}
+#btnVn3 {
+  top: 89px;
+  right: 50px;
+}
+#btnVn4 {
+  top: 189px;
+  right: 50px;
+}
+#btnVn5 {
+  top: 289px;
+  right: 50px;
+}
+a.techyButton {
+  background: #000;
+  border: 1px solid #10bcff;
+  border-style: solid none;
+  color: #10bcff;
+  display: inline-block;
+  font-family: 'Audiowide', cursive;
+  height: 30px;
+  line-height: 30px;
+  outline: none;
+  margin: 0;
+  padding: 0 30px;
+  position: absolute;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: skewX(-30deg);
+  transition-duration: 0.1s;
+  transition-property: color, text-shadow;
+  z-index: 1;
+}
+a.techyButton > span {
+  display: inline-block;
+  transform: skewX(30deg);
+}
+a.techyButton:after,
+a.techyButton:before {
+  background: #000;
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  width: 19px;
+  height: 54%;
+  border: 1px solid #10bcff;
+  border-style: none solid solid none;
+  border-bottom-width: 1.5px;
+  top: 6px;
+  right: -10px;
+  transition-property: border-color;
+}
+a.techyButton:after {
+  transform: skewX(30deg) skewY(-37deg);
+  right: -10px;
+}
+a.techyButton:before {
+  transform: skewX(30deg) skewY(-37deg) rotate(180deg);
+  left: -10px;
+}
+a.techyButton,
+a.techyButton:before,
+a.techyButton:after {
+  transition-duration: 0.1s;
+}
+a.techyButton:hover,
+a.techyButton:hover:before,
+a.techyButton:hover:after {
+  background: #e95e01;
+  border-color: #dcf5ff;
+  color: #dcf5ff;
+  text-shadow: 0 0 10px #fff;
+}
+@-moz-keyframes turn {
+  100% {
+    -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+  }
+}
+@-webkit-keyframes turn {
+  100% {
+    -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+  }
+}
+@-o-keyframes turn {
+  100% {
+    -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+  }
+}
+@keyframes turn {
+  100% {
+    -webkit-transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--target));
+  }
+}

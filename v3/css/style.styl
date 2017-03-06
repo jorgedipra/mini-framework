@@ -1,0 +1,239 @@
+/**
+* @style       Stylo de ventana/ficha
+* @media       screen
+* @version     1.0
+* @author      @jorgedipra
+* @copyright   jorge diaz
+* @apiName     page
+* @layout      in pixels
+* @date        2017
+*
+*/
+@import 'constantes.styl'
+
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+body
+	background $FondoOscuro
+	margin 0
+	overflow hidden
+	width 100%
+/** ///////////////////[obj superior der]////////////////////////////// */
+section
+	background-image $Panal
+	background-position 99px 4px
+	background-repeat no-repeat
+	background-size 400px 306px
+	height 367px
+	position absolute
+	width 500px
+	z-index 1
+/** ////////////////[Glass]//////////////////////////*/
+main{
+  background-image: url("../img/mensaje.png")
+  background-size: 100% 100%
+  border-radius: 4px
+  box-shadow: 5px 3px 100px rgba(233,94,1,0.4)
+  color: beige
+  font-family: $TextconolaMns
+  font-size: 20px
+  line-height: 1.5
+  margin: 414px 100px
+  opacity: 1
+  overflow: hidden
+  padding: 10px 5px
+  position: absolute
+  width: 340px
+}  
+main::before{
+		content ''
+		margin -35px
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		filter blur(20px)
+		z-index -1
+}
+
+blockquote
+	top: 0;
+	margin-top: -15px;
+	font-family:  $TxtRobotTitulo; 
+	border solid 1px rgba(233, 94, 1, 0)
+	width 90%
+	left 5%
+	margin-left 5%
+blockquote > h3{
+	margin-top: 18px;
+	font-size: 14px;
+	margin-left: 27px;
+	color: #e25b01;
+	font-family: $LetraConsola;
+ }	
+
+@import url("http://fonts.googleapis.com/css?family=Lora");
+
+/** ////////////////////[menu superior izq]////////////////////////*/
+nav
+	bottom: 200px;
+	display: none;
+	position: fixed;
+	right: -25px;
+	z-index: 1;
+@import 'menu.styl';
+
+/** ///////////////////////////////////////////////////////////////*/
+#esqInIz{ 
+  background-image: url(../img/esqInIz.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  bottom: 10px;
+  height: 150px;
+  left: 10px;
+  position: absolute;
+  width: 220px;
+  z-index: 1;
+}
+
+#esqSupDer{ 
+  background-image: url(../img/esqSupDer.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 150px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 220px;
+  z-index: 1;
+}
+/** ////////////////[ventana]/////////// */
+@import 'ventana.styl';
+#trg{
+	background: $FondoOscuro;
+	border:solid black 1px;
+	bottom: -330px;
+	height: 850px;
+	opacity: 1;
+	position: absolute;
+	right: -90px;
+	transform: rotate(48deg);
+	-ms-transform: rotate(48deg);
+	-webkit-transform: rotate(48deg);
+	width: 457px;
+	z-index: 0;
+}
+/** ////////[Contenido]///////// */
+article#Contenido {
+	position: absolute;
+	width: 93%;
+	height: 87%;
+	left: 27px;
+}
+.loader {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #000;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #000;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #000;
+}
+/** [door] */
+span#doorizq {
+		background-image url('../img/door2.png');
+		background-size:100% 80%;
+		opacity: 0.9;
+    height: 96%;
+    left: -50%;
+    margin: 0;
+    position: absolute;
+    top: 4%;
+    width: 50%;
+    z-index: 2;
+}
+span#doorder {
+		background-image url('../img/door1.png');
+		background-size:100% 80%;
+		opacity: 0.9;
+    height: 96%;
+    margin: 0;
+    position: absolute;
+    right: -50%;
+    top: 4%;
+    width: 50%;
+    z-index: 3;
+}
+
+/**	**/
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+/** [resolucion pc0[1300X600] */
+@media screen and (min-width:1300px) {
+  @import 'pc02-w.styl'
+}
+@media screen and (min-height:600px) {
+  @import 'pc02-h.styl'
+}
+/** [resolucion pc0[1920X1080] */
+@media screen and (min-width:1920px) {
+  @import 'pc0-w.styl'
+}
+@media screen and (min-height:1080px) {
+  @import 'pc0-h.styl'
+}

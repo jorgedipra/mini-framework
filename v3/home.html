@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="css/planet.css">
+<svg viewBox="-500 -500 1000 1000">
+  <circle r="450"></circle>
+  <circle class="equator" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+  <circle class="meridian" r="450"></circle>
+</svg>
+<div class="title">::::</div>
+<a id="btnVn1" class="techyButton" href="#"><span>Acerca de Mi</span></a>
+<a id="btnVn2" class="techyButton" href="#"><span>Habilidades</span></a>
+<a id="btnVn3" class="techyButton" href="#"><span>Proyectos</span></a>
+<a id="btnVn4" class="techyButton" href="#"><span>Logros</span></a>
+<a id="btnVn5" class="techyButton" href="#"><span>Contactame</span></a>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+
+     $("#btnVn1").mouseover(function(event) {
+     $('.title').html(':: Acerca de Mi ::'); 
+    })
+
+    $("#btnVn2").mouseover(function(event) {
+     $('.title').html(':: Habilidades ::'); 
+    })
+     $("#btnVn3").mouseover(function(event) {
+     $('.title').html(':: Proyectos ::'); 
+    })
+      $("#btnVn4").mouseover(function(event) {
+     $('.title').html(':: Logros ::'); 
+    })
+       $("#btnVn5").mouseover(function(event) {
+     $('.title').html(':: Contactame ::'); 
+    })
+
+    $(".techyButton").mouseout(function(event) {
+      $('.title').html('::::'); 
+    });
+
+
+
+
+
+  });
+</script>
