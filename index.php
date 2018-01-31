@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-require 'vendor/AltoRouter/AltoRouter.php';
+// require 'vendor/AltoRouter/AltoRouter.php';
 $router = new AltoRouter();
 $router->setBasePath('/jorgedipra');
 $router->map('GET|POST','/', 'home#index', 'home');
