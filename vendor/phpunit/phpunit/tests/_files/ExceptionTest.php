@@ -1,7 +1,5 @@
 <?php
-use PHPUnit\Framework\TestCase;
-
-class ExceptionTest extends TestCase
+class ExceptionTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Exception message
@@ -20,7 +18,7 @@ class ExceptionTest extends TestCase
     /**
      * Exception code
      *
-     * @var int
+     * @var integer
      */
     const ERROR_CODE = 500;
 

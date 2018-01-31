@@ -8,12 +8,18 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPUnit\Framework;
-
 /**
  * Extension to PHPUnit_Framework_AssertionFailedError to mark the special
  * case of a skipped test suite.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.1.0
  */
-class SkippedTestSuiteError extends AssertionFailedError implements SkippedTest
+class PHPUnit_Framework_SkippedTestSuiteError extends PHPUnit_Framework_AssertionFailedError implements PHPUnit_Framework_SkippedTest
 {
 }

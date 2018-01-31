@@ -7,22 +7,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Runner\Filter;
-
-use FilterIterator;
-use InvalidArgumentException;
-use Iterator;
-use PHPUnit\Framework\TestSuite;
-use ReflectionClass;
 
 /**
+ * @package    PHPUnit
+ * @subpackage Runner
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 4.0.0
  */
-class Factory
+class PHPUnit_Runner_Filter_Factory
 {
     /**
      * @var array
      */
-    private $filters = [];
+    private $filters = array();
 
     /**
      * @param ReflectionClass $filter
@@ -30,7 +30,7 @@ class Factory
      */
     public function addFilter(ReflectionClass $filter, $args)
     {
-        if (!$filter->isSubclassOf(\RecursiveFilterIterator::class)) {
+        if (!$filter->isSubclassOf('RecursiveFilterIterator')) {
             throw new InvalidArgumentException(
                 sprintf(
                     'Class "%s" does not extend RecursiveFilterIterator',
@@ -39,17 +39,17 @@ class Factory
             );
         }
 
-        $this->filters[] = [$filter, $args];
+        $this->filters[] = array($filter, $args);
     }
 
     /**
      * @return FilterIterator
      */
-    public function factory(Iterator $iterator, TestSuite $suite)
+    public function factory(Iterator $iterator, PHPUnit_Framework_TestSuite $suite)
     {
         foreach ($this->filters as $filter) {
             list($class, $args) = $filter;
-            $iterator           = $class->newInstance($iterator, $args, $suite);
+            $iterator = $class->newInstance($iterator, $args, $suite);
         }
 
         return $iterator;

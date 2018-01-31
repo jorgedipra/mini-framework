@@ -1,8 +1,6 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-
-class FatalTest extends TestCase
+class FatalTest extends PHPUnit_Framework_TestCase
 {
     public function testFatalError()
     {
@@ -10,6 +8,6 @@ class FatalTest extends TestCase
             xdebug_disable();
         }
 
-        eval('class FatalTest {}');
+        non_existing_function();
     }
 }

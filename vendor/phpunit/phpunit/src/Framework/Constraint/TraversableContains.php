@@ -7,24 +7,29 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\Constraint;
-
-use PHPUnit\Util\InvalidArgumentHelper;
-use SplObjectStorage;
 
 /**
  * Constraint that asserts that the Traversable it is applied to contains
  * a given value.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
  */
-class TraversableContains extends Constraint
+class PHPUnit_Framework_Constraint_TraversableContains extends PHPUnit_Framework_Constraint
 {
     /**
-     * @var bool
+     * @var boolean
      */
     protected $checkForObjectIdentity;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $checkForNonObjectIdentity;
 
@@ -34,22 +39,21 @@ class TraversableContains extends Constraint
     protected $value;
 
     /**
-     * @param mixed $value
-     * @param bool  $checkForObjectIdentity
-     * @param bool  $checkForNonObjectIdentity
-     *
-     * @throws \PHPUnit\Framework\Exception
+     * @param  mixed                       $value
+     * @param  boolean                     $checkForObjectIdentity
+     * @param  boolean                     $checkForNonObjectIdentity
+     * @throws PHPUnit_Framework_Exception
      */
     public function __construct($value, $checkForObjectIdentity = true, $checkForNonObjectIdentity = false)
     {
         parent::__construct();
 
         if (!is_bool($checkForObjectIdentity)) {
-            throw InvalidArgumentHelper::factory(2, 'boolean');
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(2, 'boolean');
         }
 
         if (!is_bool($checkForNonObjectIdentity)) {
-            throw InvalidArgumentHelper::factory(3, 'boolean');
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(3, 'boolean');
         }
 
         $this->checkForObjectIdentity    = $checkForObjectIdentity;
@@ -61,8 +65,7 @@ class TraversableContains extends Constraint
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param mixed $other Value or object to evaluate.
-     *
+     * @param  mixed $other Value or object to evaluate.
      * @return bool
      */
     protected function matches($other)
@@ -73,17 +76,19 @@ class TraversableContains extends Constraint
 
         if (is_object($this->value)) {
             foreach ($other as $element) {
-                if ($this->checkForObjectIdentity && $element === $this->value) {
-                    return true;
-                } elseif (!$this->checkForObjectIdentity && $element == $this->value) {
+                if (($this->checkForObjectIdentity &&
+                     $element === $this->value) ||
+                    (!$this->checkForObjectIdentity &&
+                     $element == $this->value)) {
                     return true;
                 }
             }
         } else {
             foreach ($other as $element) {
-                if ($this->checkForNonObjectIdentity && $element === $this->value) {
-                    return true;
-                } elseif (!$this->checkForNonObjectIdentity && $element == $this->value) {
+                if (($this->checkForNonObjectIdentity &&
+                     $element === $this->value) ||
+                    (!$this->checkForNonObjectIdentity &&
+                     $element == $this->value)) {
                     return true;
                 }
             }
@@ -112,8 +117,7 @@ class TraversableContains extends Constraint
      * The beginning of failure messages is "Failed asserting that" in most
      * cases. This method should return the second part of that sentence.
      *
-     * @param mixed $other Evaluated value or object.
-     *
+     * @param  mixed  $other Evaluated value or object.
      * @return string
      */
     protected function failureDescription($other)

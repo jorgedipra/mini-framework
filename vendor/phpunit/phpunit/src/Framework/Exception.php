@@ -7,9 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework;
-
-use PHPUnit\Util\Filter;
 
 /**
  * Base class for all PHPUnit Framework exceptions.
@@ -30,20 +27,27 @@ use PHPUnit\Util\Filter;
  * the parent would break the intended encapsulation of process isolation.
  *
  * @see http://fabien.potencier.org/article/9/php-serialization-stack-traces-and-exceptions
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.4.0
  */
-class Exception extends \RuntimeException implements \PHPUnit\Exception
+class PHPUnit_Framework_Exception extends RuntimeException implements PHPUnit_Exception
 {
     /**
      * @var array
      */
     protected $serializableTrace;
 
-    public function __construct($message = '', $code = 0, \Exception $previous = null)
+    public function __construct($message = '', $code = 0, Exception $previous = null)
     {
         parent::__construct($message, $code, $previous);
 
         $this->serializableTrace = $this->getTrace();
-
         foreach ($this->serializableTrace as $i => $call) {
             unset($this->serializableTrace[$i]['args']);
         }
@@ -64,9 +68,9 @@ class Exception extends \RuntimeException implements \PHPUnit\Exception
      */
     public function __toString()
     {
-        $string = TestFailure::exceptionToString($this);
+        $string = PHPUnit_Framework_TestFailure::exceptionToString($this);
 
-        if ($trace = Filter::getFilteredStacktrace($this)) {
+        if ($trace = PHPUnit_Util_Filter::getFilteredStacktrace($this)) {
             $string .= "\n" . $trace;
         }
 

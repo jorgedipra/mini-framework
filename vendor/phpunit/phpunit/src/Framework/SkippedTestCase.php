@@ -7,12 +7,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework;
 
 /**
  * A skipped test case
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Davey Shafik <me@daveyshafik.com>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 4.3.0
  */
-class SkippedTestCase extends TestCase
+class PHPUnit_Framework_SkippedTestCase extends PHPUnit_Framework_TestCase
 {
     /**
      * @var string
@@ -20,27 +27,27 @@ class SkippedTestCase extends TestCase
     protected $message = '';
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $backupGlobals = false;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $backupStaticAttributes = false;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $runTestInSeparateProcess = false;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $useErrorHandler = false;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $useOutputBuffering = false;
 
@@ -54,7 +61,7 @@ class SkippedTestCase extends TestCase
     }
 
     /**
-     * @throws Exception
+     * @throws PHPUnit_Framework_Exception
      */
     protected function runTest()
     {

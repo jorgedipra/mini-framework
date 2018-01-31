@@ -7,15 +7,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\Constraint;
-
-use numeric;
 
 /**
  * Constraint that asserts that the value it is evaluated for is greater
  * than a given value.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
  */
-class GreaterThan extends Constraint
+class PHPUnit_Framework_Constraint_GreaterThan extends PHPUnit_Framework_Constraint
 {
     /**
      * @var numeric
@@ -35,8 +41,7 @@ class GreaterThan extends Constraint
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param mixed $other Value or object to evaluate.
-     *
+     * @param  mixed $other Value or object to evaluate.
      * @return bool
      */
     protected function matches($other)

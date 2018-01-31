@@ -7,17 +7,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\Constraint;
-
-use ArrayAccess;
 
 /**
  * Constraint that asserts that the array it is evaluated for has a specified subset.
  *
  * Uses array_replace_recursive() to check if a key value subset is part of the
  * subject array.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Márcio Almada <marcio3w@gmail.com>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 4.4.0
  */
-class ArraySubset extends Constraint
+class PHPUnit_Framework_Constraint_ArraySubset extends PHPUnit_Framework_Constraint
 {
     /**
      * @var array|ArrayAccess
@@ -25,18 +30,18 @@ class ArraySubset extends Constraint
     protected $subset;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $strict;
 
     /**
      * @param array|ArrayAccess $subset
-     * @param bool              $strict Check for object identity
+     * @param boolean           $strict Check for object identity
      */
     public function __construct($subset, $strict = false)
     {
         parent::__construct();
-        $this->strict = $strict;
+        $this->strict  = $strict;
         $this->subset = $subset;
     }
 
@@ -44,22 +49,11 @@ class ArraySubset extends Constraint
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param array|ArrayAccess $other Array or ArrayAccess object to evaluate.
-     *
+     * @param  array|ArrayAccess $other  Array or ArrayAcess object to evaluate.
      * @return bool
      */
     protected function matches($other)
     {
-        //type cast $other & $this->subset as an array to allow
-        //support in standard array functions.
-        if ($other instanceof ArrayAccess) {
-            $other = (array) $other;
-        }
-
-        if ($this->subset instanceof ArrayAccess) {
-            $this->subset = (array) $this->subset;
-        }
-
         $patched = array_replace_recursive($other, $this->subset);
 
         if ($this->strict) {
@@ -85,8 +79,7 @@ class ArraySubset extends Constraint
      * The beginning of failure messages is "Failed asserting that" in most
      * cases. This method should return the second part of that sentence.
      *
-     * @param mixed $other Evaluated value or object.
-     *
+     * @param  mixed  $other Evaluated value or object.
      * @return string
      */
     protected function failureDescription($other)

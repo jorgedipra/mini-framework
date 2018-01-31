@@ -5,17 +5,17 @@ GH-503: assertEquals() Line Ending Differences Are Obscure
 
 $_SERVER['argv'][1] = '--no-configuration';
 $_SERVER['argv'][2] = 'Issue503Test';
-$_SERVER['argv'][3] = __DIR__ . '/503/Issue503Test.php';
+$_SERVER['argv'][3] = dirname(__FILE__).'/503/Issue503Test.php';
 
 require __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+PHPUnit_TextUI_Command::main();
 ?>
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-F                                                                   1 / 1 (100%)
+F
 
-Time: %s, Memory: %s
+Time: %s, Memory: %sMb
 
 There was 1 failure:
 

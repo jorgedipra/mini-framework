@@ -7,14 +7,18 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\Constraint;
-
-use PHPUnit\Framework\Assert;
-use PHPUnit\Framework\ExpectationFailedException;
 
 /**
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.1.0
  */
-class Attribute extends Composite
+class PHPUnit_Framework_Constraint_Attribute extends PHPUnit_Framework_Constraint_Composite
 {
     /**
      * @var string
@@ -22,10 +26,10 @@ class Attribute extends Composite
     protected $attributeName;
 
     /**
-     * @param Constraint $constraint
-     * @param string     $attributeName
+     * @param PHPUnit_Framework_Constraint $constraint
+     * @param string                       $attributeName
      */
-    public function __construct(Constraint $constraint, $attributeName)
+    public function __construct(PHPUnit_Framework_Constraint $constraint, $attributeName)
     {
         parent::__construct($constraint);
 
@@ -42,18 +46,16 @@ class Attribute extends Composite
      * a boolean value instead: true in case of success, false in case of a
      * failure.
      *
-     * @param mixed  $other        Value or object to evaluate.
-     * @param string $description  Additional information about the test
-     * @param bool   $returnResult Whether to return a result or throw an exception
-     *
+     * @param  mixed                                        $other        Value or object to evaluate.
+     * @param  string                                       $description  Additional information about the test
+     * @param  bool                                         $returnResult Whether to return a result or throw an exception
      * @return mixed
-     *
-     * @throws ExpectationFailedException
+     * @throws PHPUnit_Framework_ExpectationFailedException
      */
     public function evaluate($other, $description = '', $returnResult = false)
     {
         return parent::evaluate(
-            Assert::readAttribute(
+            PHPUnit_Framework_Assert::readAttribute(
                 $other,
                 $this->attributeName
             ),
@@ -70,7 +72,7 @@ class Attribute extends Composite
     public function toString()
     {
         return 'attribute "' . $this->attributeName . '" ' .
-            $this->innerConstraint->toString();
+               $this->innerConstraint->toString();
     }
 
     /**
@@ -79,8 +81,7 @@ class Attribute extends Composite
      * The beginning of failure messages is "Failed asserting that" in most
      * cases. This method should return the second part of that sentence.
      *
-     * @param mixed $other Evaluated value or object.
-     *
+     * @param  mixed  $other Evaluated value or object.
      * @return string
      */
     protected function failureDescription($other)

@@ -5,13 +5,14 @@
  * with some minor changes
  * This class required for PHPUnit_Framework_Constraint_ArrayHasKey testing
  */
+
 class SampleArrayAccess implements ArrayAccess
 {
     private $container;
 
     public function __construct()
     {
-        $this->container = [];
+        $this->container = array();
     }
     public function offsetSet($offset, $value)
     {

@@ -7,19 +7,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Runner;
-
-use File_Iterator_Facade;
-use PHPUnit\Framework\Exception;
-use PHPUnit\Framework\TestSuite;
-use PHPUnit\Framework\Test;
-use ReflectionClass;
-use ReflectionException;
 
 /**
  * Base class for all test runners.
+ *
+ * @package    PHPUnit
+ * @subpackage Runner
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
  */
-abstract class BaseTestRunner
+abstract class PHPUnit_Runner_BaseTestRunner
 {
     const STATUS_PASSED     = 0;
     const STATUS_SKIPPED    = 1;
@@ -27,17 +27,16 @@ abstract class BaseTestRunner
     const STATUS_FAILURE    = 3;
     const STATUS_ERROR      = 4;
     const STATUS_RISKY      = 5;
-    const STATUS_WARNING    = 6;
     const SUITE_METHODNAME  = 'suite';
 
     /**
      * Returns the loader to be used.
      *
-     * @return TestSuiteLoader
+     * @return PHPUnit_Runner_TestSuiteLoader
      */
     public function getLoader()
     {
-        return new StandardTestSuiteLoader;
+        return new PHPUnit_Runner_StandardTestSuiteLoader;
     }
 
     /**
@@ -45,11 +44,10 @@ abstract class BaseTestRunner
      * This is a template method, subclasses override
      * the runFailed() and clearStatus() methods.
      *
-     * @param string $suiteClassName
-     * @param string $suiteClassFile
-     * @param mixed  $suffixes
-     *
-     * @return Test
+     * @param  string                 $suiteClassName
+     * @param  string                 $suiteClassFile
+     * @param  mixed                  $suffixes
+     * @return PHPUnit_Framework_Test
      */
     public function getTest($suiteClassName, $suiteClassFile = '', $suffixes = '')
     {
@@ -61,7 +59,7 @@ abstract class BaseTestRunner
                 $suffixes
             );
 
-            $suite = new TestSuite($suiteClassName);
+            $suite = new PHPUnit_Framework_TestSuite($suiteClassName);
             $suite->addTestFiles($files);
 
             return $suite;
@@ -72,10 +70,10 @@ abstract class BaseTestRunner
                 $suiteClassName,
                 $suiteClassFile
             );
-        } catch (Exception $e) {
+        } catch (PHPUnit_Framework_Exception $e) {
             $this->runFailed($e->getMessage());
 
-            return;
+            return null;
         }
 
         try {
@@ -86,7 +84,7 @@ abstract class BaseTestRunner
                     'suite() method must be static.'
                 );
 
-                return;
+                return null;
             }
 
             try {
@@ -99,13 +97,13 @@ abstract class BaseTestRunner
                     )
                 );
 
-                return;
+                return null;
             }
         } catch (ReflectionException $e) {
             try {
-                $test = new TestSuite($testClass);
-            } catch (Exception $e) {
-                $test = new TestSuite;
+                $test = new PHPUnit_Framework_TestSuite($testClass);
+            } catch (PHPUnit_Framework_Exception $e) {
+                $test = new PHPUnit_Framework_TestSuite;
                 $test->setName($suiteClassName);
             }
         }
@@ -118,9 +116,8 @@ abstract class BaseTestRunner
     /**
      * Returns the loaded ReflectionClass for a suite name.
      *
-     * @param string $suiteClassName
-     * @param string $suiteClassFile
-     *
+     * @param  string          $suiteClassName
+     * @param  string          $suiteClassFile
      * @return ReflectionClass
      */
     protected function loadSuiteClass($suiteClassName, $suiteClassFile = '')
@@ -132,6 +129,7 @@ abstract class BaseTestRunner
 
     /**
      * Clears the status message.
+     *
      */
     protected function clearStatus()
     {

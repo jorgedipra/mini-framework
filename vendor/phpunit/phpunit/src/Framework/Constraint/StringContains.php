@@ -7,18 +7,26 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\Constraint;
 
 /**
  * Constraint that asserts that the string it is evaluated for contains
  * a given string.
  *
- * Uses mb_strpos() to find the position of the string in the input, if not
- * found the evaluation fails.
+ * Uses strpos() to find the position of the string in the input, if not found
+ * the evaluation fails.
  *
  * The sub-string is passed in the constructor.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
  */
-class StringContains extends Constraint
+class PHPUnit_Framework_Constraint_StringContains extends PHPUnit_Framework_Constraint
 {
     /**
      * @var string
@@ -26,13 +34,13 @@ class StringContains extends Constraint
     protected $string;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $ignoreCase;
 
     /**
-     * @param string $string
-     * @param bool   $ignoreCase
+     * @param string  $string
+     * @param boolean $ignoreCase
      */
     public function __construct($string, $ignoreCase = false)
     {
@@ -46,16 +54,15 @@ class StringContains extends Constraint
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param mixed $other Value or object to evaluate.
-     *
+     * @param  mixed $other Value or object to evaluate.
      * @return bool
      */
     protected function matches($other)
     {
         if ($this->ignoreCase) {
-            return mb_stripos($other, $this->string) !== false;
+            return stripos($other, $this->string) !== false;
         } else {
-            return mb_strpos($other, $this->string) !== false;
+            return strpos($other, $this->string) !== false;
         }
     }
 
@@ -67,7 +74,7 @@ class StringContains extends Constraint
     public function toString()
     {
         if ($this->ignoreCase) {
-            $string = mb_strtolower($this->string);
+            $string = strtolower($this->string);
         } else {
             $string = $this->string;
         }

@@ -1,15 +1,13 @@
 <?php
-use PHPUnit\Framework\TestCase;
-
-class BeforeClassAndAfterClassTest extends TestCase
+class BeforeClassAndAfterClassTest extends PHPUnit_Framework_TestCase
 {
     public static $beforeClassWasRun = 0;
-    public static $afterClassWasRun  = 0;
+    public static $afterClassWasRun = 0;
 
     public static function resetProperties()
     {
         self::$beforeClassWasRun = 0;
-        self::$afterClassWasRun  = 0;
+        self::$afterClassWasRun = 0;
     }
 
     /**

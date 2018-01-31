@@ -7,77 +7,75 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\AssertionFailedError;
-use PHPUnit\Framework\Warning;
-use PHPUnit\Framework\TestSuite;
-use PHPUnit\Framework\TestResult;
-use PHPUnit\Framework\TestListener;
-use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\Test;
 
-class Framework_TestListenerTest extends TestCase implements TestListener
+/**
+ *
+ *
+ * @package    PHPUnit
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ * @covers     PHPUnit_Framework_TestCase
+ */
+class Framework_TestListenerTest extends PHPUnit_Framework_TestCase implements PHPUnit_Framework_TestListener
 {
     protected $endCount;
     protected $errorCount;
     protected $failureCount;
-    protected $warningCount;
     protected $notImplementedCount;
     protected $riskyCount;
     protected $skippedCount;
     protected $result;
     protected $startCount;
 
-    public function addError(Test $test, Exception $e, $time)
+    public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
         $this->errorCount++;
     }
 
-    public function addWarning(Test $test, Warning $e, $time)
-    {
-        $this->warningCount++;
-    }
-
-    public function addFailure(Test $test, AssertionFailedError $e, $time)
+    public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
     {
         $this->failureCount++;
     }
 
-    public function addIncompleteTest(Test $test, Exception $e, $time)
+    public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
         $this->notImplementedCount++;
     }
 
-    public function addRiskyTest(Test $test, Exception $e, $time)
+    public function addRiskyTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
         $this->riskyCount++;
     }
 
-    public function addSkippedTest(Test $test, Exception $e, $time)
+    public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
         $this->skippedCount++;
     }
 
-    public function startTestSuite(TestSuite $suite)
+    public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
     {
     }
 
-    public function endTestSuite(TestSuite $suite)
+    public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
     {
     }
 
-    public function startTest(Test $test)
+    public function startTest(PHPUnit_Framework_Test $test)
     {
         $this->startCount++;
     }
 
-    public function endTest(Test $test, $time)
+    public function endTest(PHPUnit_Framework_Test $test, $time)
     {
         $this->endCount++;
     }
 
     protected function setUp()
     {
-        $this->result = new TestResult;
+        $this->result = new PHPUnit_Framework_TestResult;
         $this->result->addListener($this);
 
         $this->endCount            = 0;
@@ -90,7 +88,7 @@ class Framework_TestListenerTest extends TestCase implements TestListener
 
     public function testError()
     {
-        $test = new TestError;
+        $test = new Error;
         $test->run($this->result);
 
         $this->assertEquals(1, $this->errorCount);

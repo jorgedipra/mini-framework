@@ -7,24 +7,28 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\Constraint;
-
-use Countable;
-use IteratorAggregate;
-use Traversable;
-use Generator;
 
 /**
+ *
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.6.0
  */
-class Count extends Constraint
+class PHPUnit_Framework_Constraint_Count extends PHPUnit_Framework_Constraint
 {
     /**
-     * @var int
+     * @var integer
      */
     protected $expectedCount = 0;
 
     /**
-     * @param int $expected
+     * @param integer $expected
      */
     public function __construct($expected)
     {
@@ -36,9 +40,8 @@ class Count extends Constraint
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param mixed $other
-     *
-     * @return bool
+     * @param  mixed   $other
+     * @return boolean
      */
     protected function matches($other)
     {
@@ -46,9 +49,8 @@ class Count extends Constraint
     }
 
     /**
-     * @param mixed $other
-     *
-     * @return bool
+     * @param  mixed   $other
+     * @return boolean
      */
     protected function getCountOf($other)
     {
@@ -61,15 +63,11 @@ class Count extends Constraint
                 $iterator = $other;
             }
 
-            if ($iterator instanceof Generator) {
-                return $this->getCountOfGenerator($iterator);
-            }
-
-            $key   = $iterator->key();
+            $key = $iterator->key();
             $count = iterator_count($iterator);
 
-            // Manually rewind $iterator to previous key, since iterator_count
-            // moves pointer.
+            // manually rewind $iterator to previous key, since iterator_count
+            // moves pointer
             if ($key !== null) {
                 $iterator->rewind();
                 while ($iterator->valid() && $key !== $iterator->key()) {
@@ -82,30 +80,12 @@ class Count extends Constraint
     }
 
     /**
-     * Returns the total number of iterations from a generator.
-     * This will fully exhaust the generator.
-     *
-     * @param Generator $generator
-     *
-     * @return int
-     */
-    protected function getCountOfGenerator(Generator $generator)
-    {
-        for ($count = 0; $generator->valid(); $generator->next()) {
-            $count += 1;
-        }
-
-        return $count;
-    }
-
-    /**
-     * Returns the description of the failure.
+     * Returns the description of the failure
      *
      * The beginning of failure messages is "Failed asserting that" in most
      * cases. This method should return the second part of that sentence.
      *
-     * @param mixed $other Evaluated value or object.
-     *
+     * @param  mixed  $other Evaluated value or object.
      * @return string
      */
     protected function failureDescription($other)
