@@ -1,22 +1,14 @@
 {
-   "name": "altorouter/altorouter",
-   "description": "A lightning fast router for PHP",
-   "keywords": ["router", "routing", "lightweight"],
-   "homepage": "https://github.com/dannyvankooten/AltoRouter",
+   "name": "jorgedipra",
+   "description": "landingpage",
+   "keywords": ["jorgedipra", "paginaweb", "landingpage"],
+   "homepage": "https://github.com/jorgedipra",
    "license": "MIT",
    "authors": [
       {
-         "name": "Danny van Kooten",
-         "email": "dannyvankooten@gmail.com",
-         "homepage": "http://dannyvankooten.com/"
-      },
-      {
-         "name": "Koen Punt",
-         "homepage": "https://github.com/koenpunt"
-      },
-      {
-         "name": "niahoo",
-         "homepage": "https://github.com/niahoo"
+         "name": "jorgem diaz",
+         "email": "jorgedipra@gmail.com",
+         "homepage": "http://jorgedipra.hol.es"
       }
    ],
    "require": {
@@ -27,7 +19,7 @@
       "codeclimate/php-test-reporter": "dev-master"
    },
    "autoload": {
-      "classmap": ["AltoRouter.php"]
+      "classmap": ["vendor/AltoRouter/AltoRouter.php"]
    },
    "scripts": {
      "test": "vendor/bin/phpunit"
