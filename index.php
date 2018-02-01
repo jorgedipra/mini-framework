@@ -1,48 +1,23 @@
-<?php
-require 'vendor/autoload.php';
-// require 'vendor/AltoRouter/AltoRouter.php';
-$router = new AltoRouter();
-$router->setBasePath('/jorgedipra');
-$router->map('GET|POST','/', 'home#index', 'home');
+<?php 
+/**
+ * Jorgedipra - landingpage hecha en php
+ *
+ * @package  Jorgedipra
+ * @author   Jorge diaz <jorgedipra@gmail.com>
+ */
 
-$router->map('GET','/users/', array('c' => 'UserController', 'a' => 'ListAction'));
+$uri = urldecode(
+    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+);
 
-$router->map('GET','/users/[i:id]', 'users#show', 'users_show');
+// Este archivo nos permite emular la funcionalidad 'mod_rewrite' de Apache desde
+// servidor web PHP incorporado. Esto proporciona una forma conveniente de probar
+// sin haber instalado un software de servidor web 'real' aquí.
+// lo mas recomendable es tenerlo en la raiz y no en un public.
+// en caso de trabajar en local, configurar un host virtual
+if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
+    return false;
+}
 
-$router->map('POST','/users/[i:id]/[delete|update:action]', 'usersController#doAction', 'users_do');
-// match current request
-$match = $router->match();
-
-if($match['name']=='home')
- 	require  'view/index.php';
-
-// echo ">>".$match['params']['c'];
+require_once __DIR__.'/config/app.php';
 ?>
-<h1>AltoRouter</h1>
-
-<h3>Current request: </h3>
-<pre>
-	Target: <?php var_dump($match['target']); ?>
-	Params: <?php var_dump($match['params']); ?>
-	Name: 	<?php var_dump($match['name']); ?>
-</pre>
-
-<h3>Try these requests: </h3>
-<p>
-	<a href="<?php echo $router->generate('home'); ?>">
-		GET <?php echo $router->generate('home'); ?>
-	</a>
-</p>
-
-<p>
-	<a href="<?php echo $router->generate('users_show', array('id' => 5)); ?>">
-		GET <?php echo $router->generate('users_show', array('id' => 5)); ?>
-	</a>
-</p>
-<p>
-	<form action="<?php echo $router->generate('users_do', array('id' => 10, 'action' => 'update')); ?>" method="post">
-		<button type="submit">
-			<?php echo $router->generate('users_do', array('id' => 10, 'action' => 'update')); ?>
-		</button>
-	</form>
-</p>
