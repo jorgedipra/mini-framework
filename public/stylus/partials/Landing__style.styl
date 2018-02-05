@@ -1,0 +1,37 @@
+#gridLan{
+	position: relative;
+	height: 700px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-gap: 5px;
+	
+	&__card{
+		display: grid;
+		grid-template-rows: 15% 55% 30%
+	}/*::END __card*/
+	
+	&__carrusel{
+		display: grid;
+		grid-template-rows: 10% 60% 30%;
+	}/*::END __card*/
+	&__botonera{
+		grid-row: 3;
+		text-align: center;
+		display: grid;
+		grid-template-columns: 15% 70% 15%;
+		grid-template-rows: 15% 50% 35%;
+		.btnLan{
+			grid-row: 2;
+			grid-column: 2;
+		}
+	}/*::END__botonera*/
+	.card{
+		grid-row: 2;
+		box-shadow:$box-shadow;
+	}/*::END card*/
+
+	.carousel{
+		grid-row: 2;
+	} 
+}

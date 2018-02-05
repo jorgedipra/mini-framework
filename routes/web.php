@@ -2,11 +2,9 @@
 $router = new AltoRouter();
 
 $router->setBasePath('');// rura base se deja "" si esta en la raiz
-#			  @metodo	@ruta	@variable	   @nombre		
-$router->map('GET|POST','/', 'landing#index', 'landing');
-$router->map('GET','/users/', array('c' => 'UserController', 'a' => 'ListAction'),'users');
+#			  @metodo	@ruta  									@target        @name		
+$router->map('GET|POST','/',   									'Landing',    'home');
+$router->map('GET',		'/about',   	    					'Landing',    'about');
 
-
-// match current request
+// match current requestc
 $match = $router->match();
-?>

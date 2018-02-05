@@ -2,7 +2,8 @@
 
 // require 'vendor/AltoRouter/AltoRouter.php';
 $router = new AltoRouter();
-$router->setBasePath('/jorgedipra');
+$router->setBasePath('');
+// $router->setBasePath('/jorgedipra');
 $router->map('GET|POST','/', 'home#index', 'home');
 
 $router->map('GET','/users/', array('c' => 'UserController', 'a' => 'ListAction'));
@@ -12,9 +13,16 @@ $router->map('GET','/users/[i:id]', 'users#show', 'users_show');
 $router->map('POST','/users/[i:id]/[delete|update:action]', 'usersController#doAction', 'users_do');
 // match current request
 $match = $router->match();
+$s=$match['target'];
+echo "target [c]:".$s['c'];
+print("<br>");
 
-if($match['name']=='home')
- 	require  'view/index.php';
+$para=$match['params'];
+echo "Params=>id: ".$para['id'];
+
+
+// if($match['name']=='home')
+//  	require  'view/index.php';
 
 // echo ">>".$match['params']['c'];
 ?>
@@ -46,3 +54,4 @@ if($match['name']=='home')
 		</button>
 	</form>
 </p>
+----
