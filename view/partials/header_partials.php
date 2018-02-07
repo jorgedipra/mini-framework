@@ -24,7 +24,8 @@
 	<link rel="stylesheet" href="../../public/css/font/awesome5/css/fontawesome-all.min.css">
 	<link rel="stylesheet" href="../../public/css/font/roboto/roboto.css">
 	<link rel="stylesheet" href="../../public/css/style.css">
-	<link rel="stylesheet" href="../../public/css/index.css">
+	<link rel="stylesheet" href="../../public/css/<?=$match['target']?>.css">
+	
 </head>
 <body>
 
