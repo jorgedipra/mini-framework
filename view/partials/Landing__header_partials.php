@@ -8,7 +8,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<span id="space"></span>
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<!-- <li class="nav-item active">
