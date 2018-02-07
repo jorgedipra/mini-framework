@@ -1,0 +1,44 @@
+#header{
+	.navbar{
+		background-color: $ColorPrimario;
+		border-radius: 0 0 5px 5px;
+		box-shadow: $box-shadow;
+		.navbar-brand{
+			color:$TextosDefaul;
+			font-size: 1.65rem
+			line-height: 28px
+			img{
+				border-radius: 100%;
+			}
+		}//::END->navbar-brand
+		.navbar-collapse{
+			ul{
+				margin: 0 auto;
+				li{
+					a{
+						border-bottom 2px solid $ColorPrimario
+						color:$TextosDefaul
+						&:hover{
+						border-bottom 2px solid $paper	
+						}
+						.fab{
+							font-size: 18px
+							color: $paper
+							padding-right: 10px
+						}
+					}//END->a
+				}//::END->li
+			}//::END->ul
+			button{
+				.fab{
+					font-size: 18px
+					padding-right: 10px
+					}
+			}
+		}//::END->.navbar-collapse
+	}//::END->.navbar
+}//::END->#header
+#space{
+	height: 1px
+	width: 35%
+}

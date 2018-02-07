@@ -1,9 +1,8 @@
 <?php 
 #@header
-define("Titulo", "proyecto-a");
+define("Titulo", "Jorgedipra");
 include 'partials/header_partials.php'; 
 #@END::header
-
 
 #@header-html
 include 'partials/Landing__header_partials.php';
@@ -14,7 +13,7 @@ include 'partials/Landing__header_partials.php';
 		<article class="card">
 			<img class="card-img-top" src="../storage/web/landing/facebook_no_image.png" alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">proyecto -a</h5>
+				<h1 class="card-title">Jorgedipra</h1>
 				<p class="card-text">Frontend y back-end (Diseñador de páginas web y programador).</p>
 
 				<a href="#" class="btn btn-primary">Button</a>
