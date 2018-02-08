@@ -8,17 +8,27 @@ include 'partials/header_partials.php';
 include 'partials/Landing__header_partials.php';
 #@END::header
 ?>
-<div class="container " id="gridLan">
+<div class="container text-center" id="gridLan">
 	<section id="gridLan__card">
 		<article class="card">
 			<img class="card-img-top" src="../storage/web/landing/facebook_no_image.png" alt="Card image cap">
 			<div class="card-body">
-				<h1 class="card-title">Jorgedipra</h1>
-				<p class="card-text">Frontend y back-end (Diseñador de páginas web y programador).</p>
-
-				<a href="#" class="btn btn-primary">Button</a>
-				<a href="#" class="btn btn-primary">Button</a>
-				<a href="#" class="btn btn-primary">Button</a>
+				<h1 class="card-title ">Jorgedipra</h1>
+				<h4 class="card-title ">Jorge Edwin Diaz Prado</h4>
+				<p class="card-text ">
+					Desarrollador web en <br>Crucerum.com.
+				</p>
+				<div class="btn-group " data-toggle="buttons">
+					<a href="#" class="btn btn-primary">
+						<i class="fab fa-github fab-2x"></i> Github
+					</a>
+					<a href="#" class="btn btn-primary">
+						<i class="fab fa-linkedin"></i> Linkedin
+					</a>
+					<a href="#" class="btn btn-primary">
+						<i class="fab fa-skype"></i> Skype
+					</a>
+				</div>
 			</div>
 		</article>
 	</section>
