@@ -72,9 +72,9 @@ include 'partials/Landing__header_partials.php';
 			</a>
 		</div>
 		<article class="container article">
-			<h5>¿Qué es Lorem Ipsum?</h5>
+			<h5>Steve Jobs</h5>
 			<p>
-			Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor 
+			"La mayoría de la gente piensa que el diseño es una chapa, es una simple decoración. Para mí, nada es más importante en el futuro que el diseño. El diseño es el alma de todo lo creado por el hombre" <br>
 			</p>
 		</article>	
 		<article id="gridLan__botonera">
