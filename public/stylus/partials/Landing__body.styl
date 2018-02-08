@@ -1,0 +1,92 @@
+#gridLan{
+	position: relative;
+	height: 700px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-gap: 5px;
+	
+	&__card{
+		display: grid;
+		grid-template-rows: 15% 65% 20%;
+		.card-body{
+			h1{
+				@media ({$mddesc}) {
+					font-size: 200%;
+				}
+			}//::END->h1
+			.btn-group{
+				.btn{
+					i{
+						@media ({$lgdesc}) {
+							font-size: 150%;
+							padding-left:10px;
+							padding-right:10px;
+						}
+						@media ({$mddesc}) {
+								padding: 0
+						}
+					}//::END->i
+					span{
+						@media ({$lgdesc}) {
+							display: none
+						}	
+					}//::END->span
+				}//END->btn
+			}//END->btn-group  
+		}//END->card-body
+		@media ({$mddesc}) {
+			grid-template-rows: 15% 57% 28%;
+		}
+	}//::END-> __card
+	
+	&__carrusel{
+		display: grid;
+		grid-template-rows: 10% 50% 20% 20%;
+		@media ({$lgdesc}) {
+			grid-template-rows: 10% 60% 50% 40%;
+		}
+		#carouselExampleIndicators{
+			grid-row:2
+		}
+		.article{
+			text-align: left;
+			width 93%;
+			margin-top:2%
+			grid-row:3
+		}
+	}//::END-> __card
+	
+	&__botonera{
+		grid-row: 4;
+		text-align: center;
+		display: grid;
+		grid-template-columns: 15% 70% 15%;
+		grid-template-rows: 15% 50% 35%;
+		.btnLan{
+			grid-row: 2;
+			grid-column: 2;
+			.btn{
+				margin: 10px;
+			}//::END->.btn
+		}//::END->.btnLan
+		@media ({$lgdesc}) {
+			grid-template-rows: 10% 55% 35%;
+		}
+		@media ({$mddesc}) {
+			grid-template-columns: 10% 80% 10%;
+			grid-template-rows: 0% 55% 45%;
+		}
+	}//::END->__botonera
+	
+	.card{
+		grid-row: 2;
+		box-shadow:$box-shadow;
+	}//::END-> card
+	
+	.carousel{
+		grid-row: 2;
+		margin:0 auto;
+		width: 90%;
+	}//::END->carousel 
+}//END->gridLan

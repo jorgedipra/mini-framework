@@ -20,13 +20,13 @@ include 'partials/Landing__header_partials.php';
 				</p>
 				<div class="btn-group " data-toggle="buttons">
 					<a href="#" class="btn btn-primary">
-						<i class="fab fa-github fab-2x"></i> Github
+						<i class="fab fa-github fab-2x"></i> <span>Github</span>
 					</a>
 					<a href="#" class="btn btn-primary">
-						<i class="fab fa-linkedin"></i> Linkedin
+						<i class="fab fa-linkedin"></i> <span>Linkedin</span>
 					</a>
 					<a href="#" class="btn btn-primary">
-						<i class="fab fa-skype"></i> Skype
+						<i class="fab fa-skype"></i> <span>Skype</span>
 					</a>
 				</div>
 			</div>
@@ -71,6 +71,12 @@ include 'partials/Landing__header_partials.php';
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
+		<article class="container article">
+			<h5>¿Qué es Lorem Ipsum?</h5>
+			<p>
+			Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor 
+			</p>
+		</article>	
 		<article id="gridLan__botonera">
 			<div class="btnLan">
 				<a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
