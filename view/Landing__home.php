@@ -19,13 +19,13 @@ include 'partials/Landing__header_partials.php';
 					Desarrollador web en <br>Crucerum.com.
 				</p>
 				<div class="btn-group " data-toggle="buttons">
-					<a href="#" class="btn btn-primary">
+					<a href="https://github.com/jorgedipra" target="bank" class="btn btn-primary">
 						<i class="fab fa-github fab-2x"></i> <span>Github</span>
 					</a>
-					<a href="#" class="btn btn-primary">
+					<a href="https://www.linkedin.com/in/jorgedipra" target="bank" class="btn btn-primary">
 						<i class="fab fa-linkedin"></i> <span>Linkedin</span>
 					</a>
-					<a href="#" class="btn btn-primary">
+					<a href="skype:jorgedipra?chat" target="bank" class="btn btn-primary">
 						<i class="fab fa-skype"></i> <span>Skype</span>
 					</a>
 				</div>
@@ -43,22 +43,22 @@ include 'partials/Landing__header_partials.php';
 				<div class="carousel-item active">
 					<img class="d-block w-100" src="../storage/web/landing/img1.svg" alt="First slide">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>...</h5>
-						<p>...</p>
+						<h5>Portafolio</h5>
+						<p>Arquitectura & Orden</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img class="d-block w-100" src="../storage/web/landing/img2.svg" alt="Second slide">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>...</h5>
-						<p>...</p>
+						<h5>Savelink</h5>
+						<p>Estructura & detalle</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img class="d-block w-100" src="../storage/web/landing/img3.svg" alt="Third slide">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>...</h5>
-						<p>...</p>
+						<h5>Contactame</h5>
+						<p>Organización & visión</p>
 					</div>
 				</div>
 			</div>
@@ -79,10 +79,10 @@ include 'partials/Landing__header_partials.php';
 		</article>	
 		<article id="gridLan__botonera">
 			<div class="btnLan">
-				<a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+				<a href="Contacto" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
 					Contactarme
 				</a>
-				<a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">
+				<a href="Proyectos" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">
 					Mis Proyectos
 				</a>
 			</div>

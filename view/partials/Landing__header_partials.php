@@ -22,7 +22,7 @@
 					<a class="nav-link " href="/Savelink"><i class="fab fas fa-link fab-2x"></i>Savelink</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="/Contactame"><i class="fab fas fa-envelope fab-2x"></i>Contactame</a>
+					<a class="nav-link " href="/Contacto"><i class="fab fas fa-envelope fab-2x"></i>Contactame</a>
 				</li>
 			</ul>
 			<button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fab fas fa-user-circle fab-2x"></i>Login</button>
