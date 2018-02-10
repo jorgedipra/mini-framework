@@ -4,10 +4,11 @@ class  Landing__Controller{
 
 	function home($id='',$var=''){
 
+		$h1='Jorgedipra';
 		
 
 		return $view = [
-			'var1' => 'x1',
+			'h1' => $h1,
 			'var2' => 'x2'
 		];
 	}##->END function home

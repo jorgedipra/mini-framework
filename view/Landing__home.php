@@ -11,9 +11,9 @@ include 'partials/Landing__header_partials.php';
 <div class="container text-center" id="gridLan">
 	<section id="gridLan__card">
 		<article class="card">
-			<img class="card-img-top" src="../storage/web/landing/facebook_no_image.png" alt="Card image cap">
+			<img class="card-img-top" src="/storage/web/landing/facebook_no_image.png" alt="Card image cap">
 			<div class="card-body">
-				<h1 class="card-title ">Jorgedipra</h1>
+				<h1 class="card-title "><?=$Landing_home['h1']?></h1>
 				<h4 class="card-title ">Jorge Edwin Diaz Prado</h4>
 				<p class="card-text ">
 					Desarrollador web en <br>Crucerum.com.
@@ -41,21 +41,21 @@ include 'partials/Landing__header_partials.php';
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="d-block w-100" src="../storage/web/landing/img1.svg" alt="First slide">
+					<img class="d-block w-100" src="/storage/web/landing/img1.svg" alt="First slide">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Portafolio</h5>
 						<p>Arquitectura & Orden</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="../storage/web/landing/img2.svg" alt="Second slide">
+					<img class="d-block w-100" src="/storage/web/landing/img2.svg" alt="Second slide">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Savelink</h5>
 						<p>Estructura & detalle</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="../storage/web/landing/img3.svg" alt="Third slide">
+					<img class="d-block w-100" src="/storage/web/landing/img3.svg" alt="Third slide">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Contactame</h5>
 						<p>Organización & visión</p>

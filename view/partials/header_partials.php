@@ -8,9 +8,9 @@
 	<meta property="og:title" content="Jorgedipra" />
 	<meta property="og:description" content="Web personal, donde pueden tener de primera mano la información sobre lo que hago, a que me dedicó y que he hecho" />
 	<meta property="og:url" content="http://jorgedipra.hol.es" />
-	<meta property="og:image" content="../../storage/logo/h1.jpg" />
+	<meta property="og:image" content="/storage/logo/h1.jpg" />
 	<meta name="twitter:creator" content="@jorgedipra">
-	<meta name="twitter:image" content="../../storage/logo/h1.jpg">
+	<meta name="twitter:image" content="/storage/logo/h1.jpg">
 	<meta name="copyright" content="© 2018">
 	<meta name="author" content="Jorgedipra">
 	<meta name="description" content="Web personal, donde pueden tener de primera mano la información sobre lo que hago, a que me dedicó y que he hecho">
@@ -19,12 +19,12 @@
 	<meta name="Distribution" content="global"/>
 	<meta name="Robots" content="all"/>
 	<title><?=Titulo?></title>
-	<link rel="shortcut icon" href="../../storage/logo/h1.ico" />	
-	<link rel="stylesheet" href="../../public/files/bootstrap-4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../public/css/font/awesome5/css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="../../public/css/font/roboto/roboto.css">
-	<link rel="stylesheet" href="../../public/css/style.css">
-	<link rel="stylesheet" href="../../public/css/<?=$match['name']?>.css">
+	<link rel="shortcut icon" href="/storage/logo/h1.ico" />	
+	<link rel="stylesheet" href="/public/files/bootstrap-4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/font/awesome5/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="/public/css/font/roboto/roboto.css">
+	<link rel="stylesheet" href="/public/css/style.css">
+	<link rel="stylesheet" href="/public/css/<?=$match['name']?>.css">
 </head>
 <body>
 
