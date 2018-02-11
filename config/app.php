@@ -12,5 +12,8 @@ require 'vendor/autoload.php';
 #@->Rutas
 require  'routes/web.php';
 
+#@->contructor
+require  'routes/contructor.php'; 
+
 #@->Controller
 require 'api/Kernel.php';

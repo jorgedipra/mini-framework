@@ -1,3 +1,11 @@
+<?php 
+
+##Kernel
+$nombre_archivo = "api/Kernel.php"; 
+
+if($editar==true){
+file_exists($nombre_archivo);
+   $mensaje  = <<<'EOT'
 <?php
 $_id=false;#para data o id
 $_var=false;#especificar
@@ -9,16 +17,23 @@ require "Entidad/Entidades.php";##entidades get/set
 require "Controller/{$match['target']}__Controller.php";##carga Controller
 do {
 	switch ($match['target']):
-      	case 'Landing':
-      		$Controller = new  Landing__Controller();
-      		${"{$match['target']}_{$match['name']}"} = $Controller->{$match['name']}($_id,$_var);
-		    $cont=2;#termina el ciclo
+
+EOT;
+$temp="";
+$a="";
+foreach ($Classes as $ruta):
+$a = <<<END
+      	case '$ruta':
+      		\$Controller = new  {$ruta}__Controller();
+      		\${"{\$match['target']}_{\$match['name']}"} = \$Controller->{\$match['name']}(\$_id,\$_var);
+		    \$cont=2;#termina el ciclo
 		break;
-      	case 'Savelink':
-      		$Controller = new  Savelink__Controller();
-      		${"{$match['target']}_{$match['name']}"} = $Controller->{$match['name']}($_id,$_var);
-		    $cont=2;#termina el ciclo
-		break;
+
+END;
+$temp .= $a;
+endforeach;
+
+$mensaje = $mensaje.$temp.<<<'EOT'
 		default:
 			$id=explode("_", $match['name']);
 			$match['name']=$id[0];
@@ -45,3 +60,14 @@ else:
 endif;
 ##Carga el html del codigo
 require  "view/{$match['target']}__{$match['name']}.php";
+EOT;
+
+   if($archivo = fopen($nombre_archivo, "w")){
+        if(fwrite($archivo, $mensaje)){
+            echo "Se ha ejecutado correctamente";
+        }else{
+            echo "Ha habido un problema al crear el archivo";
+        }
+        fclose($archivo);
+    }
+}
