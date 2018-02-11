@@ -4,9 +4,9 @@ $_var=false;#especificar
 $cont=0;#variable de switch
 
 if($match['target']):
-##carga Controller
-require "Entidad/{$match['target']}__Entidad.php";##entidades get/set
-require "Controller/{$match['target']}__Controller.php";##controladores
+require 'Conexion/conexion.php';##Conexion a base de datos	
+require "Entidad/Entidades.php";##entidades get/set
+require "Controller/{$match['target']}__Controller.php";##carga Controller
 do {
 	switch ($match['name']):
 		case 'about':#Landing->Landing__about
