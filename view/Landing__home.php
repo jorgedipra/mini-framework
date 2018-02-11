@@ -16,7 +16,7 @@ include 'partials/Landing__header_partials.php';
 				<h1 class="card-title "><?=$Landing_home['h1']?></h1>
 				<h4 class="card-title ">Jorge Edwin Diaz Prado</h4>
 				<p class="card-text ">
-					Desarrollador web en <br>Crucerum.com.
+					Desarrollador web en <br>Crucerum.com
 				</p>
 				<div class="btn-group " data-toggle="buttons">
 					<a href="https://github.com/jorgedipra" target="bank" class="btn btn-primary">
