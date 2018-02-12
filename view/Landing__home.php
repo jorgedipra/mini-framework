@@ -23,10 +23,10 @@ include 'partials/Landing__header_partials.php';
 						<i class="fab fa-github fab-2x"></i> <span>Github</span>
 					</a>
 					<a href="https://www.linkedin.com/in/jorgedipra" target="bank" class="btn btn-primary">
-						<i class="fab fa-linkedin"></i> <span>Linkedin</span>
+						<i class="fab fa-linkedin fab-2x"></i> <span>Linkedin</span>
 					</a>
 					<a href="skype:jorgedipra?chat" target="bank" class="btn btn-primary">
-						<i class="fab fa-skype"></i> <span>Skype</span>
+						<i class="fab fa-skype fab-2x"></i> <span>Skype</span>
 					</a>
 				</div>
 			</div>
@@ -41,21 +41,21 @@ include 'partials/Landing__header_partials.php';
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="d-block w-100" src="/storage/web/landing/img1.svg" alt="First slide">
+					<img class="d-block w-100" src="/storage/web/landing/img1.svg" alt="First slide" title="">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Portafolio</h5>
 						<p>Arquitectura & Orden</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="/storage/web/landing/img2.svg" alt="Second slide">
+					<img class="d-block w-100" src="/storage/web/landing/img2.svg" alt="Second slide" title="">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Savelink</h5>
 						<p>Estructura & detalle</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="/storage/web/landing/img3.svg" alt="Third slide">
+					<img class="d-block w-100" src="/storage/web/landing/img3.svg" alt="Third slide" title="">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Contactame</h5>
 						<p>Organización & visión</p>
