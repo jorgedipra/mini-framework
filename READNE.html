@@ -1,0 +1,70 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>READNE.md</title>
+      </head>
+      <body>
+        <p>Proyecto plantado sobre AltoRouter, este es una clase de enrutamiento pequeña pero poderosa para PHP 5.3+, fuertemente inspirada por <a href="https://github.com/chriso/klein.php/">klein.php</a>.</p>
+<h1 id="altorouter-build-status-https-api-travis-ci-org-dannyvankooten-altorouter-png-http-travis-ci-org-dannyvankooten-altorouter-latest-stable-version-https-poser-pugx-org-altorouter-altorouter-v-stable-svg-https-packagist-org-packages-altorouter-altorouter-license-https-poser-pugx-org-altorouter-altorouter-license-svg-https-packagist-org-packages-altorouter-altorouter-code-climate-https-codeclimate-com-github-dannyvankooten-altorouter-badges-gpa-svg-https-codeclimate-com-github-dannyvankooten-altorouter-test-coverage-https-codeclimate-com-github-dannyvankooten-altorouter-badges-coverage-svg-https-codeclimate-com-github-dannyvankooten-altorouter-">AltoRouter <a href="http://travis-ci.org/dannyvankooten/AltoRouter"><img src="https://api.travis-ci.org/dannyvankooten/AltoRouter.png" alt="Build Status"></a> <a href="https://packagist.org/packages/altorouter/altorouter"><img src="https://poser.pugx.org/altorouter/altorouter/v/stable.svg" alt="Latest Stable Version"></a> <a href="https://packagist.org/packages/altorouter/altorouter"><img src="https://poser.pugx.org/altorouter/altorouter/license.svg" alt="License"></a> <a href="https://codeclimate.com/github/dannyvankooten/AltoRouter"><img src="https://codeclimate.com/github/dannyvankooten/AltoRouter/badges/gpa.svg" alt="Code Climate"></a> <a href="https://codeclimate.com/github/dannyvankooten/AltoRouter"><img src="https://codeclimate.com/github/dannyvankooten/AltoRouter/badges/coverage.svg" alt="Test Coverage"></a></h1>
+<pre><code class="lang-php">$router = new AltoRouter();
+//si se agrega una clase colocar estado true carcar la pagina y pasar a false
+$editar=false;
+// rura base se deja &quot;&quot; si esta en la raiz
+$router-&gt;setBasePath(&#39;&#39;);
+//clases que se quieran crear, por cada clase seria un conjunto de funciones diferentes
+$Classes=[
+            &#39;1&#39;=&gt;&#39;Landing&#39;,
+            &#39;2&#39;=&gt;&#39;Savelink&#39;,
+        ];
+
+#              @metodo    @ruta                                      @target              @name        
+$router-&gt;map(&#39;GET|POST&#39;,&#39;/&#39;,                                       $Classes[&#39;1&#39;],    &#39;home&#39;);
+$router-&gt;map(&#39;GET&#39;,        &#39;/about&#39;,                               $Classes[&#39;2&#39;],    &#39;about&#39;);
+$router-&gt;map(&#39;GET&#39;,        &#39;/about/[i:id]&#39;,                        $Classes[&#39;2&#39;],    &#39;about_id&#39;);
+$router-&gt;map(&#39;GET&#39;,        &#39;/about/[desc|asc|favoritos:ordenar]&#39;,  $Classes[&#39;2&#39;],    &#39;about_ordenar&#39;);
+$router-&gt;map(&#39;GET&#39;,        &#39;/about/[delete|update:action]=[i:id]&#39;, $Classes[&#39;2&#39;],    &#39;about_data&#39;);
+$router-&gt;map(&#39;GET&#39;,        &#39;/about/[delete|update:action]&#39;,         $Classes[&#39;2&#39;],    &#39;about_acciones&#39;);
+#@ruta
+##ordenar-&gt;string ,acciones-&gt;llamado especial ,id=&gt;int
+#@name
+##ordenar-&gt;string ,acciones-&gt;llamado especial ,id=&gt;int, data-&gt;envia un numero de accion
+
+// match current requestc
+$match = $router-&gt;match();
+</code></pre>
+<h2 id="notas">Notas</h2>
+<ul>
+<li>El css se debe llamar igual a @name</li>
+<li><p>El controlador debe rener la sigiente estrutura:</p>
+<ul>
+<li>Nombre de archivo: @target<strong>controller.php (Landing</strong>controller.php)</li>
+<li>La case de tener el mismo nombre del archivo (class  Landing__Controller)</li>
+<li>Por cada @name debe haber una funciones dentro de su controlador debe llamarse igual a @name (funcion home()) </li>
+</ul>
+</li>
+<li>Los nombres de los archivos view deben tener esta estructura; <code>$Classes[&#39;1&#39;]__@name.php</code>  (Landing__home.php)</li>
+</ul>
+<h2 id="caracteristicas">Caracteristicas</h2>
+<ul>
+<li>Se puede usar con todos los métodos HTTP</li>
+<li>Enrutamiento dinámico con parámetros de ruta nombrados</li>
+<li>Enrutamiento invertido</li>
+<li>Enrutamiento de expresión regular flexible (inspired by <a href="http://www.sinatrarb.com/">Sinatra</a>)</li>
+<li>Expresiones regulares personalizadas</li>
+</ul>
+<h2 id="empezando">Empezando</h2>
+<ul>
+<li>Necesita PHP&gt; = 5.3 </li>
+</ul>
+<h2 id="license">License</h2>
+<p>(MIT License)</p>
+<ul>
+<li>Copyright (c) 2017 Jorge Edwin Diaz Prado <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x6a;&#111;&#114;&#x67;&#x65;&#x64;&#105;&#x70;&#x72;&#x61;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x6a;&#111;&#114;&#x67;&#x65;&#x64;&#105;&#x70;&#x72;&#x61;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
+<li>Copyright (c) 2012-2015 Danny van Kooten <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#104;&#105;&#64;&#100;&#x61;&#x6e;&#x6e;&#121;&#x76;&#97;&#x6e;&#x6b;&#x6f;&#x6f;&#116;&#x65;&#110;&#x2e;&#x63;&#x6f;&#x6d;">&#104;&#105;&#64;&#100;&#x61;&#x6e;&#x6e;&#121;&#x76;&#97;&#x6e;&#x6b;&#x6f;&#x6f;&#116;&#x65;&#110;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
+</ul>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+      </body>
+    </html>
