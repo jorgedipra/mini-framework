@@ -5,11 +5,11 @@
  * @package  Jorgedipra
  * @author   Jorge diaz <jorgedipra@gmail.com>
  */
+require_once __DIR__.'/vendor/autoload.php';
 
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
-
 // Este archivo nos permite emular la funcionalidad 'mod_rewrite' de Apache desde
 // servidor web PHP incorporado. Esto proporciona una forma conveniente de probar
 // sin haber instalado un software de servidor web 'real' aquí.

@@ -1,6 +1,8 @@
 options -indexes
 RewriteEngine on
 
+ErrorDocument 404 /404
+
 #RewriteBase /olimpo/api/
 #RewriteRule ^index\.php$ - [L]
 #RewriteCond %{REQUEST_FILENAME} !-f
@@ -11,3 +13,11 @@ RewriteEngine on
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . index.php [L]
+
+
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^www.jorgedipra.com [NC]
+#RewriteRule ^(.*)$ https://jorgedipra.com/$1 [L,R=301]
+
+#RewriteCond %{HTTPS} !=on
+#RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

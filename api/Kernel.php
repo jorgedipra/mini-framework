@@ -14,11 +14,6 @@ do {
       		${"{$match['target']}_{$match['name']}"} = $Controller->{$match['name']}($_id,$_var);
 		    $cont=2;#termina el ciclo
 		break;
-      	case 'Savelink':
-      		$Controller = new  Savelink__Controller();
-      		${"{$match['target']}_{$match['name']}"} = $Controller->{$match['name']}($_id,$_var);
-		    $cont=2;#termina el ciclo
-		break;
 		default:
 			$id=explode("_", $match['name']);
 			$match['name']=$id[0];
@@ -42,6 +37,7 @@ do {
 else:
 	$match['target']="error";
 	$match['name']="404";
+	header("Location: /404");
 endif;
 ##Carga el html del codigo
 require  "view/{$match['target']}__{$match['name']}.php";
